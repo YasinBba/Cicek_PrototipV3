@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riva Rosa Çiçek ve Organizasyon Antalya | Taze Çiçek & Hızlı Teslimat</title>
+    <meta name="description"
+        content="Antalya'nın en iyi çiçekçisi. Düğün çiçeği, açılış çelengi, buket ve özel günler için taze çiçekler.">
+    <meta name="keywords" content="çiçekçi antalya, çiçek siparişi, düğün çiçeği, buket, açılış çelengi">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Riva Rosa Çiçek ve Organizasyon - Taze Çiçekler">
+    <meta property="og:description" content="Her özel gününüz için taze ve kaliteli çiçekler">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ========================================
+           ÇİÇEKÇİ AYARLARI - BURAYI DEĞİŞTİR
+        ======================================== */
+        :root {
+            --primary: #C2185B;
+            --primary-dark: #AD1457;
+            --secondary: #6A4C7C;
+            --accent: #F8BBD9;
+            --background: #FFF0F6;
+            --text: #2C1810;
+        }
+
+        /* ========================================
+           GENEL STİLLER - DEĞİŞTİRME
+        ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-flowers {
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .flower-1 {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .flower-2 {
+            top: 25%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+
+        .flower-3 {
+            bottom: 20%;
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .flower-4 {
+            bottom: 33%;
+            right: 33%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #FFF0F6, white);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 2px solid #F8BBD9;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(194, 24, 91, 0.25);
+        }
+
+        .service-card .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .service-card .price {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: #FFF0F6;
+            border-radius: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #FFF0F6;
+            border-radius: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .map {
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>🌸</span>
+                <span id="businessName">Riva Rosa Çiçek ve Organizasyon</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="tel:+905422293807" class="btn-primary">Hemen Ara</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-flowers flower-1">🌺</div>
+        <div class="hero-flowers flower-2">🌷</div>
+        <div class="hero-flowers flower-3">🌻</div>
+        <div class="hero-flowers flower-4">🌹</div>
+
+        <div class="hero-content">
+            <div class="hero-icon">🌸</div>
+            <h1>Riva Rosa Çiçek ve Organizasyon</h1>
+            <p>Her Gün Taze Çiçekler</p>
+            <p style="font-size: 1.1rem; color: #888;">Antalya'nın en taze ve kaliteli çiçeklerini sunan çiçekçiniz</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/905422293807?text=Merhaba%20Riva%20Rosa%20Çiçek%20ve%20Organizasyon,%20çiçek%20siparişi%20vermek%20istiyorum."
+                    class="btn-primary" target="_blank">
+                    📱 Sipariş Ver
+                </a>
+                <a href="#hizmetler" class="btn-secondary">Hizmetlerimiz</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="hizmetler" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hizmetlerimiz</h2>
+                <p>Her özel gününüz için taze ve kaliteli çiçekler</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">💐</div>
+                    <h3>Düğün Çiçeği</h3>
+                    <p>Özel gününüze özel tasarımlar</p>
+                    <div class="price"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🎉</div>
+                    <h3>Açılış & Organizasyon</h3>
+                    <p>Açılış çelenkleri ve süslemeleri</p>
+                    <div class="price"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🌹</div>
+                    <h3>Sevgililer Günü</h3>
+                    <p>Özel aranjmanlar ve buketler</p>
+                    <div class="price"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🏵️</div>
+                    <h3>Cenaze Çiçeği</h3>
+                    <p>Hüzünlü günlerinizde yanınızdayız</p>
+                    <div class="price"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🎂</div>
+                    <h3>Doğum Günü</h3>
+                    <p>Renkli ve neşeli buketler</p>
+                    <div class="price"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🌻</div>
+                    <h3>Her Gün İçin</h3>
+                    <p>Taze mevsim çiçekleri</p>
+                    <div class="price"></div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🚚</div>
+                    <h4>Teslimat Seçenekleri</h4>
+                    <p>Şehir içi</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">❤️</div>
+                    <h4>Taze Çiçekler</h4>
+                    <p>Günlük ithalat</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h4>11 Yıl Deneyim</h4>
+                    <p>Uzman ekip</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeri" style="background: var(--background);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Çiçek Galerisi</h2>
+                <p>Özel tasarımlarımızdan örnekler</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- 1. FOTOĞRAF -->
+                <div class="gallery-item">
+                    <img src="img/cicek1.jpeg" alt="Çiçek 1">
+                </div>
+                <!-- 2. FOTOĞRAF -->
+                <div class="gallery-item">
+                    <img src="img/cicek2.jpeg" alt="Çiçek 2">
+                </div>
+                <!-- 3. FOTOĞRAF -->
+                <div class="gallery-item">
+                    <img src="img/cicek3.jpeg" alt="Çiçek 3">
+                </div>
+                <!-- 4. FOTOĞRAF -->
+                <div class="gallery-item">
+                    <img src="img/cicek4.jpeg" alt="Çiçek 4">
+                </div>
+                <!-- 5. FOTOĞRAF -->
+                <div class="gallery-item">
+                    <img src="img/cicek5.jpeg" alt="Çiçek 5">
+                </div>
+                <!-- 6. FOTOĞRAF -->
+                <div class="gallery-item">
+                    <img src="img/cicek6.jpeg" alt="Çiçek 6">
+                </div>
+                <!-- 7. FOTOĞRAF (YENİ) -->
+                <div class="gallery-item">
+                    <img src="img/cicek7.jpeg" alt="Çiçek 7">
+                </div>
+                <!-- 8. FOTOĞRAF (YENİ) -->
+                <div class="gallery-item">
+                    <img src="img/cicek8.jpeg" alt="Çiçek 8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="iletisim" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>İletişim</h2>
+                <p>Size nasıl yardımcı olabiliriz?</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Adres</h4>
+                            <p>Yeni Doğan, Şehit Uzman Çavuş Ali Yılmaz Cad No:2/C, 07090 Kepez/Antalya</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p><a href="tel:+905422293807" style="color: #666; text-decoration: none;">+90 542 229 3807</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <h4>Çalışma Saatleri</h4>
+                            <p><strong>Pazartesi - Cumartesi:</strong> 08:00 - 22:00</p>
+                            <p><strong>Pazar:</strong> 10:00 - 22:30</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6380.519487977277!2d30.645768758691382!3d36.90805360092215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c38f83b97f3f17%3A0xd75ef2395ef5273!2sRiva%20Rosa%20%C3%87i%C3%A7ek%20ve%20Organizasyon!5e0!3m2!1str!2str!4v1772723576300!5m2!1str!2str"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="color: var(--primary); margin-bottom: 1rem;">Riva Rosa Çiçek ve Organizasyon</h3>
+        <p>Antalya'nın en taze ve kaliteli çiçeklerini sunan çiçekçiniz</p>
+        <p style="margin-top: 1rem; color: #666;">&copy; 2026 Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/905422293807?text=Merhaba%20Riva%20Rosa%20Çiçek%20ve%20Organizasyon,%20çiçek%20siparişi%20vermek%20istiyorum."
+            target="_blank" class="whatsapp-button">
+            <svg width="30" height="30" fill="white" viewBox="0 0 24 24">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .gallery-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <!-- GOOGLE ANALYTICS ID'Yİ BURAYA EKLE -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+</body>
+
+</html>
